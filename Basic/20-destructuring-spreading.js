@@ -16,7 +16,7 @@ console.log(myName);
 
 // Sintaxis arrays
 
-let [myValue0, myValue1, myValue2, myValue3, myValue4] = myArray;
+let [myValue0, myValue1, myValue2, myValue3, myValue4] = myArray; // destructura por posicion
 console.log(myValue0);
 console.log(myValue1);
 console.log(myValue2);
@@ -48,7 +48,7 @@ console.log(alias);
 
 // Sintaxis objects con valores predeterminados
 
-let { name2, age2, alias2, email = "email@email.com" } = person;
+let { name2, age2, alias2, email = "email@email.com" } = person; // destructura por clave
 console.log(name2); // No existe
 console.log(age2); // No existe
 console.log(alias2); // No existe
@@ -56,7 +56,7 @@ console.log(email);
 
 // Sintaxis objects con nuevos nombres de variables
 
-let { alias: alias3, name: name3, age: age3 } = person;
+let { alias: alias3, name: name3, age: age3 } = person; // doble punto : PARA PONERLE UN NUEVO NOMBRE A LA VARIABLE QUE QUIERO DESTRUCTURAR
 console.log(name3);
 console.log(age3);
 console.log(alias3);
@@ -91,25 +91,26 @@ console.log(jobName);
 
 // Sintaxis arrays
 
-let myArray2 = [...myArray, 5, 6];
+let myArray2 = [...myArray, 5, 6]; // creamos un nuevo array con los valores de myarray y le añadimos 5 y 6, pero en otro array sin modificar el original
 
 console.log(myArray2);
 
 // Copia de arrays
 
-let myArray3 = [...myArray];
+let myArray3 = [...myArray, ...array2];
+console.log(myArray3);
 
 console.log(myArray3);
 
 // Combinación de arrays
 
-let myArray4 = [...myArray, ...myArray2, ...myArray3];
+let myArray4 = [...myArray, ...myArray2, ...myArray3]; // combinamos todos los valores de esos arrays, y hacemos una copia de todo sin modificar el original
 
 console.log(myArray4);
 
-// Sintaxis objects
+// Sintaxis objects // lo mismo pero con objectos
 
-let person4 = { ...person, email: "kevinkevin@kevin.com" };
+let person4 = { ...person, email: "kevinkevin@kevin.com" }; // lo mismo pero con objetos
 
 console.log(person4);
 

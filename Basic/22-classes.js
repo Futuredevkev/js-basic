@@ -61,7 +61,7 @@ person4.walk();
 // Propiedades privadas
 
 class PrivatePerson {
-  #bank;
+  #bank; // inicializamos una propiedad privada para despues pasarla al constructor
 
   constructor(name, age, alias, bank) {
     this.name = name;
@@ -83,7 +83,7 @@ let person5 = new PrivatePerson("kevin", 37, "kevin", "IBAN123456789");
 
 console.log(person5);
 
-// Getters y Setters
+// Getters y Setters, obtener o establecer, dejar hacer solo una accion en la privacidadd
 
 class GetSetPerson {
   #name;
@@ -98,11 +98,11 @@ class GetSetPerson {
     this.#bank = bank;
   }
 
-  get name() {
+  get name() { //obtener
     return this.#name;
   }
 
-  set bank(bank) {
+  set bank(bank) { // establecer
     this.#bank = bank;
   }
 }
@@ -113,6 +113,9 @@ console.log(person6);
 console.log(person6.name);
 
 person6.bank = "new IBAN123456789";
+
+
+
 
 // Herencia
 
@@ -126,7 +129,7 @@ class Animal {
   }
 }
 
-class Dog extends Animal {
+class Dog extends Animal { // hereda las propiedades de animal
   sound() {
     console.log("Guau!");
   }
@@ -138,7 +141,7 @@ class Dog extends Animal {
 
 class Fish extends Animal {
   constructor(name, size) {
-    super(name);
+    super(name); // super hace una llamada a el nombre del constructor de animal, pero podemos igual reescribir
     this.size = size;
   }
 
